@@ -1,0 +1,150 @@
+/* Reset default margin and padding for the body */
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Set background color and text color for the body */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: purple; /* Purple background for the page */
+    color: white; /* White text color for the page */
+    text-align: center;
+  }
+  
+  /* Container to center-align content */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Center content vertically in the viewport */
+    padding-top: 20px; /* Add top padding to move content to the top of the page */
+  }
+  
+  /* Header styles */
+  .header {
+    background-color: #333;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .header h1 {
+    font-size: 36px;
+    margin: 0;
+    color: white; /* White text color for the header */
+  }
+  
+  /* Task form styles */
+.task-form {
+    display: flex;
+    flex-direction: column; /* Change the flex direction to column */
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .task-form input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff; /* White background for the input field */
+    color: #333; /* Dark text color for the input field */
+    margin-bottom: 10px; /* Add margin to the bottom of the input */
+  }
+  
+  .task-form button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  
+  /* Task list styles */
+  .task-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    width: 100%; /* Set the task list width to 100% */
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f0f0f0; /* Light gray background for task items */
+  }
+  
+  /* Dynamic height for task items based on content */
+  li label {
+    flex: 1;
+    overflow-wrap: break-word; /* Wrap text to the next line if it exceeds container width */
+    max-width: 80%; /* Reduce the maximum width of the task label */
+  }
+  
+  /* Completed task styles */
+  .completed-tasks {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .completed-tasks h2 {
+    font-size: 24px;
+    color: white; /* White text color for the completed tasks header */
+  }
+  
+  .completed-list {
+    list-style: none;
+    padding: 0;
+    width: 100%; /* Set the completed task list width to 100% */
+  }
+  
+  .completed-list li {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #dcdcdc; /* Light gray background for completed task items */
+  }
+  
+  /* Button to clear completed tasks */
+  #clearCompleted {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  /* Container for both lists */
+  .lists-container {
+    display: flex;
+    justify-content: space-between; /* Separate the lists with space */
+    margin-top: 20px;
+  }
+  
+  /* Task list container styles */
+  .task-list-container {
+    width: 48%; /* Adjust the width as needed */
+  }
+  
+  /* Completed tasks container styles */
+  .completed-tasks-container {
+    width: 48%; /* Adjust the width as needed */
+  }
+  .task-list label,
+.completed-list li {
+  color: black; /* Set text color to black */
+}

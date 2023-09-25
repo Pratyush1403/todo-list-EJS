@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>ToDo List</title>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>ToDo List</h1>
+      <p id="datePlaceholder"></p>
+    </div>
+    <div class="lists-container">
+      <div class="task-list-container">
+        <h2>To-Do</h2>
+        <form action="/addTask" method="post" class="task-form">
+          <input type="text" name="title" placeholder="New Task" required>
+          <button type="submit">Add</button>
+        </form>
+        <ul class="task-list">
+          <% tasks.forEach((task, index) => { %>
+            <li>
+              <label><%= task %></label>
+              <form action="/completeTask" method="post">
+                <input type="hidden" name="taskId" value="<%= index %>">
+                <button type="submit">Complete</button>
+              </form>
+            </li>
+          <% }); %>
+        </ul>
+      </div>
+      <div class="completed-tasks-container">
+        <h2>Completed Tasks</h2>
+        <ul class="completed-list">
+          <% completedTasks.forEach((completedTask) => { %>
+            <li><%= completedTask %></li>
+          <% }); %>
+        </ul>
+        <form action="/clearCompleted" method="post">
+          <button id="clearCompleted">Clear Completed</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function getCurrentDayAndDate() {
+      const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      const now = new Date();
+      const dayOfWeek = daysOfWeek[now.getDay()];
+      const dayOfMonth = now.getDate();
+      const month = months[now.getMonth()];
+      const year = now.getFullYear();
+      return `${dayOfWeek}, ${month} ${dayOfMonth}, ${year}`;
+    }
+  </script>
+</body>
+</html>
